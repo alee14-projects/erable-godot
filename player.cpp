@@ -5,6 +5,7 @@
 #include <QMediaPlayer>
 #include <QDebug>
 #include <QFileDialog>
+#include <QMessageBox>
 
 
 Player::Player(QWidget *parent)
@@ -49,10 +50,25 @@ void Player::on_pauseButton_pressed()
     mPlayer->pause();
 }
 
+
 void Player::on_pushButton_pressed()
 {
     QString mFile;
+    QMessageBox msgbox;
     mFile = QFileDialog::getOpenFileName(this, "Open any audio file", QDir::homePath(), tr("Audio Files (*.mp3)"));
     mPlayer->setMedia(QUrl::fromLocalFile(mFile));
     qDebug() << "Opening" << mFile;
+    msgbox.setText("This audio file has been loaded.");
+    msgbox.exec();
+}
+
+void Player::on_actionOpen_triggered()
+{
+    QString mFile;
+    QMessageBox msgbox;
+    mFile = QFileDialog::getOpenFileName(this, "Open any audio file", QDir::homePath(), tr("Audio Files (*.mp3)"));
+    mPlayer->setMedia(QUrl::fromLocalFile(mFile));
+    qDebug() << "Opening" << mFile;
+    msgbox.setText("This audio file has been loaded.");
+    msgbox.exec();
 }

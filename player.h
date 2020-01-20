@@ -28,6 +28,8 @@ private slots:
 
     void on_pushButton_pressed();
 
+    void on_actionOpen_triggered();
+
 private:
     Ui::Player *ui;
 };
