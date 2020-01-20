@@ -3,6 +3,7 @@
 #include "ui_player.h"
 #include "about.h"
 #include <QMediaPlayer>
+#include <QDebug>
 #include <QFileDialog>
 
 
@@ -29,14 +30,14 @@ void Player::on_playButton_pressed()
 {
     QPushButton mPlay;
 
-    std::cout << "Playing music...\n";
+    qDebug() << "Playing music...";
 
     mPlayer->play();
 }
 
 void Player::on_actionAbout_triggered()
 {
-    std::cout << "Opening dialog\n";
+    qDebug() << "Opening dialog";
     About about;
     about.setModal(true);
     about.exec();
@@ -44,6 +45,7 @@ void Player::on_actionAbout_triggered()
 
 void Player::on_pauseButton_pressed()
 {
+    qDebug() << "Pausing music...";
     mPlayer->pause();
 }
 
@@ -52,4 +54,5 @@ void Player::on_pushButton_pressed()
     QString mFile;
     mFile = QFileDialog::getOpenFileName(this, "Open any audio file", QDir::homePath(), tr("Audio Files (*.mp3)"));
     mPlayer->setMedia(QUrl::fromLocalFile(mFile));
+    qDebug() << "Opening" << mFile;
 }
