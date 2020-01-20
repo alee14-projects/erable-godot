@@ -3,6 +3,7 @@
 #include "ui_player.h"
 #include "about.h"
 #include <QMediaPlayer>
+#include <QFileDialog>
 
 
 Player::Player(QWidget *parent)
@@ -24,11 +25,12 @@ void Player::on_actionQuit_triggered()
     close();
 }
 
-void Player::on_pushButton_pressed()
+void Player::on_playButton_pressed()
 {
+    QPushButton mPlay;
+
     std::cout << "Playing music...\n";
-    mPlayer->setMedia(QUrl::fromLocalFile("/home/andrew/Music/4616-werq-by-kevin-macleod.mp3"));
-    mPlayer->setVolume(50);
+
     mPlayer->play();
 }
 
@@ -38,4 +40,16 @@ void Player::on_actionAbout_triggered()
     About about;
     about.setModal(true);
     about.exec();
+}
+
+void Player::on_pauseButton_pressed()
+{
+    mPlayer->pause();
+}
+
+void Player::on_pushButton_pressed()
+{
+    QString mFile;
+    mFile = QFileDialog::getOpenFileName(this, "Open any audio file", QDir::homePath(), tr("Audio Files (*.mp3)"));
+    mPlayer->setMedia(QUrl::fromLocalFile(mFile));
 }

@@ -20,9 +20,13 @@ public:
 private slots:
     void on_actionQuit_triggered();
 
-    void on_pushButton_pressed();
+    void on_playButton_pressed();
 
     void on_actionAbout_triggered();
+
+    void on_pauseButton_pressed();
+
+    void on_pushButton_pressed();
 
 private:
     Ui::Player *ui;

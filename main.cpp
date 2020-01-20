@@ -1,5 +1,6 @@
 #include <iostream>
 #include "player.h"
+#include <QMessageBox>
 
 #include <QApplication>
 
