@@ -16,8 +16,6 @@ public:
     ~Player();
 
 private slots:
-    void on_actionQuit_toggled(bool arg1);
-
     void on_actionQuit_triggered();
 
 private:
