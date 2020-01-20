@@ -1,5 +1,6 @@
 #ifndef PLAYER_H
 #define PLAYER_H
+#include <QMediaPlayer>
 
 #include <QMainWindow>
 
@@ -14,9 +15,14 @@ class Player : public QMainWindow
 public:
     Player(QWidget *parent = nullptr);
     ~Player();
+    QMediaPlayer* mPlayer = new QMediaPlayer();
 
 private slots:
     void on_actionQuit_triggered();
+
+    void on_pushButton_pressed();
+
+    void on_actionAbout_triggered();
 
 private:
     Ui::Player *ui;
