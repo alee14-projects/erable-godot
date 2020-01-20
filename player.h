@@ -24,9 +24,7 @@ private slots:
 
     void on_actionAbout_triggered();
 
-    void on_pauseButton_pressed();
-
-    void on_pushButton_pressed();
+    void on_mediaButton_pressed();
 
     void on_actionOpen_triggered();
 

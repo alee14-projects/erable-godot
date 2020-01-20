@@ -29,37 +29,36 @@ void Player::on_actionQuit_triggered()
 
 void Player::on_playButton_pressed()
 {
-    QPushButton mPlay;
-
-    qDebug() << "Playing music...";
-
-    mPlayer->play();
+    if (mPlayer->state() == mPlayer->PlayingState) {
+         qDebug() << "Pausing music...";
+         mPlayer->pause();
+     } else {
+         qDebug() << "Playing music...";
+         mPlayer->play();
+     }
 }
 
 void Player::on_actionAbout_triggered()
 {
     qDebug() << "Opening dialog";
     About about;
-    about.setModal(true);
     about.exec();
 }
 
-void Player::on_pauseButton_pressed()
-{
-    qDebug() << "Pausing music...";
-    mPlayer->pause();
-}
-
-
-void Player::on_pushButton_pressed()
+void Player::on_mediaButton_pressed()
 {
     QString mFile;
     QMessageBox msgbox;
     mFile = QFileDialog::getOpenFileName(this, "Open any audio file", QDir::homePath(), tr("Audio Files (*.mp3)"));
-    mPlayer->setMedia(QUrl::fromLocalFile(mFile));
-    qDebug() << "Opening" << mFile;
-    msgbox.setText("This audio file has been loaded.");
-    msgbox.exec();
+    if (mFile == NULL) {
+        msgbox.setText("File is invalid.");
+        return;
+    } else {
+        mPlayer->setMedia(QUrl::fromLocalFile(mFile));
+        qDebug() << "Opening" << mFile;
+        msgbox.setText("This audio file has been loaded.");
+        msgbox.exec();
+    }
 }
 
 void Player::on_actionOpen_triggered()
@@ -67,8 +66,13 @@ void Player::on_actionOpen_triggered()
     QString mFile;
     QMessageBox msgbox;
     mFile = QFileDialog::getOpenFileName(this, "Open any audio file", QDir::homePath(), tr("Audio Files (*.mp3)"));
-    mPlayer->setMedia(QUrl::fromLocalFile(mFile));
-    qDebug() << "Opening" << mFile;
-    msgbox.setText("This audio file has been loaded.");
-    msgbox.exec();
+    if (mFile == NULL) {
+        msgbox.setText("File is invalid.");
+        return;
+    } else {
+        mPlayer->setMedia(QUrl::fromLocalFile(mFile));
+        qDebug() << "Opening" << mFile;
+        msgbox.setText("This audio file has been loaded.");
+        msgbox.exec();
+    }
 }
