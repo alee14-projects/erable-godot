@@ -3,11 +3,11 @@ branches:
     - master
 
 install:
-  - set QTDIR=C:\Qt\5.8\mingw53_32
+  - set QTDIR=set QTDIR=C:\Qt\5.12\msvc2017_64
   - choco install -y InnoSetup
   - set PATH=%QTDIR%\bin;C:\Qt\Tools\mingw530_32\bin;%PATH%;"C:\Program Files (x86)\Inno Setup 5"
 build_script:
-  - qmake FastQt.pro
+  - qmake AleePlayer.pro
   - mingw32-make
 after_build:
   - windeployqt release/fastqt.exe
