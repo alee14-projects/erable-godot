@@ -32,7 +32,23 @@ TRANSLATIONS += \
     AleePlayer_en_CA.ts
 
 
+unix:!macx:!android {
+
+    TARGET = AleePlayer
+
+    target.path = /usr/bin
+
+    desktop.path = /usr/share/applications
+    desktop.files = AleePlayer.desktop
+
+    icon.path = /usr/share/icons/hicolor/scalable/apps/
+    icon.files = ALP.svg
+
+
+    INSTALLS += target desktop icon
+}
+
+
 # Default rules for deployment.
-qnx: target.path = /tmp/$${TARGET}/bin
-else: unix:!android: target.path = /opt/$${TARGET}/bin
-!isEmpty(target.path): INSTALLS += target
+#qnx: target.path = /tmp/$${TARGET}/bin
+#!isEmpty(target.path): INSTALLS += target

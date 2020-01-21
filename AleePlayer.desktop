@@ -3,5 +3,5 @@ Type=Application
 Name=AleePlayer
 Comment=Music Player by Alee Productions
 Exec=AleePlayer
-Icon=ALP.png
+Icon=ALP
 Categories=Audio;
