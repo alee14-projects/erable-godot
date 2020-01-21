@@ -1,7 +1,7 @@
  
 language: cpp
 before_install:
-  - sudo apt-get install libtag1-dev qt5-qmake libqt5x11extras5-dev qt5-default qttools5-dev-tools libqt5svg5-dev
+  - sudo apt-get install libtag1-dev qt5-qmake libqt5x11extras5-dev qt5-default qttools5-dev-tools libqt5svg5-dev qtmultimedia5-dev
 script:
   - qmake
   - make
