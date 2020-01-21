@@ -28,6 +28,10 @@ private slots:
 
     void on_actionOpen_triggered();
 
+    void on_stopButton_pressed();
+
+    void mFileDialog();
+
 private:
     Ui::Player *ui;
 };
