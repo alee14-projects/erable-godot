@@ -1,5 +1,4 @@
-QT       += core gui
-QT += multimedia
+QT       += core gui multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -31,6 +30,7 @@ FORMS += \
 
 TRANSLATIONS += \
     AleePlayer_en_CA.ts
+
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

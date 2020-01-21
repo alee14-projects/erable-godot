@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=AleePlayer
+Comment=Music Player by Alee Productions
+Exec=AleePlayer
+Icon=ALP.png
+Categories=Audio;

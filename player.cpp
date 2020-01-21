@@ -1,4 +1,3 @@
-#include <iostream>
 #include "player.h"
 #include "ui_player.h"
 #include "about.h"
@@ -17,7 +16,7 @@ Player::Player(QWidget *parent)
 
 Player::~Player()
 {
-    std::cout << "Closing AleePlayer...\n";
+    qInfo() << "Closing AleePlayer...\n";
     mPlayer->deleteLater();
     delete ui;
 }
