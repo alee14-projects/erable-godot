@@ -1,0 +1,38 @@
+ 
+version: 1.0.{build}
+branches:
+  only:
+  - master
+skip_tags: true
+image: Visual Studio 2017
+clone_depth: 5
+
+environment:
+  GITHUB_TOKEN:
+    secure: hFxvrP00pBfZqJGfgLLZgkXPI5ZPGND3ToEURxPW5K5PYcuNaG0oiipX5b/O+dDR
+  REPO_SLUG: aleeproductions/AleePlayer
+  deploy_project: AleePlayer
+  deploy_version: ''
+  deploy_artifact: ''
+    
+build_script:
+- cmd: >-
+    appveyor\build.bat
+test: off
+
+artifacts:
+- path: deploy
+  name: AleePlayer-Windows
+  
+  
+before_deploy:
+- ps:
+    iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/deploy.ps1'))
+    
+deploy_script:
+- ps: >-
+    
+    Start-FileDownload 'https://github.com/probonopd/uploadtool/raw/master/upload.sh'
+    
+    sh -c "TRAVIS_BRANCH=$env:APPVEYOR_REPO_BRANCH TRAVIS_COMMIT=$env:APPVEYOR_REPO_BRANCH ./upload.sh /c/projects/AleePlayer/AleePlayer-Windows.zip 2>/dev/null"
+

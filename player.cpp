@@ -1,10 +1,11 @@
-#include "player.h"
-#include "ui_player.h"
-#include "about.h"
 #include <QMediaPlayer>
 #include <QDebug>
 #include <QFileDialog>
 #include <QMessageBox>
+#include "player.h"
+#include "ui_player.h"
+#include "about.h"
+
 
 
 void Player::mFileDialog()
@@ -14,13 +15,17 @@ void Player::mFileDialog()
     mFile = QFileDialog::getOpenFileName(this, "Open any audio file", QDir::homePath(), tr("Audio Files (*.mp3 *.wav *.ogg)"));
     if (mFile == NULL) {
         qDebug() << "File cannot be found";
-        msgbox.setText("File is invalid.");
+        msgbox.setWindowTitle("Uh oh! An error has occured!");
+        msgbox.setText("File is invalid. Maybe try loading a valid audio file.");
+        msgbox.setIcon(QMessageBox::Critical);
         msgbox.exec();
         return;
     } else {
         mPlayer->setMedia(QUrl::fromLocalFile(mFile));
         qDebug() << "Opening" << mFile;
+        msgbox.setWindowTitle("Success!");
         msgbox.setText("This audio file has been loaded.");
+        msgbox.setIcon(QMessageBox::Information);
         msgbox.exec();
         return;
     }
