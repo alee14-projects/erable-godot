@@ -32,6 +32,8 @@ Player::Player(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Player)
 {
+    QSlider volumeSlider;
+    //connect()
     ui->setupUi(this);
 
 }
