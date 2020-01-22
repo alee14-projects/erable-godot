@@ -27,7 +27,7 @@ if [ $STAGE = "script" ]; then
     echo "[TRAVIS] Building project"
     make
     echo "[TRAVIS] Deploying Qt Libraries"
-    macdeployqt AleePlayer.app
+    macdeployqt AleePlayer.app -dmg
 
   fi
 elif [ $STAGE = "before_install" ]; then
