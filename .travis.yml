@@ -2,12 +2,10 @@
 language: cpp
 os:
   - linux
-  - osx
+#  - osx
 sudo: require
 dist: trusty
-compiler:
-  - gcc
-osx_image: xcode10.2
+#osx_image: xcode10.2
 before_install:
   - export STAGE=before_install
   - ./scripts/travis.sh
@@ -26,22 +24,25 @@ after_failure:
   - chmod +x send.sh
   - ./send.sh failure $WEBHOOK_URL
   
+compiler:
+  - gcc
+dist: xenial
   
-addons:
-  homebrew:
-    taps:
-      - kde-mac/kde
-    packages:
-      - qt5
-      - gstreamer
-      - gst-plugins-good
-      - gst-plugins-bad
-      - gst-plugins-ugly
-      - cmake
-      - libmusicbrainz
-      - taglib
-      - kf5-extra-cmake-modules
-    update: true
+#addons:
+#  homebrew:
+#    taps:
+#      - kde-mac/kde
+#    packages:
+#      - qt5
+#      - gstreamer
+#      - gst-plugins-good
+#      - gst-plugins-bad
+#      - gst-plugins-ugly
+#      - cmake
+#      - libmusicbrainz
+#      - taglib
+#      - kf5-extra-cmake-modules
+#    update: true
 
 branches:
   except:
