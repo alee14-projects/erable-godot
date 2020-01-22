@@ -17,7 +17,7 @@ environment:
     
 build_script:
 - cmd: >-
-    appveyor\build.bat
+    scripts\appveyor.bat
 test: off
 
 artifacts:
@@ -29,10 +29,10 @@ before_deploy:
 - ps:
     iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/deploy.ps1'))
     
-deploy_script:
-- ps: >-
+#deploy_script:
+#- ps: >-
     
-    Start-FileDownload 'https://github.com/probonopd/uploadtool/raw/master/upload.sh'
+#    Start-FileDownload 'https://github.com/probonopd/uploadtool/raw/master/upload.sh'
     
-    sh -c "TRAVIS_BRANCH=$env:APPVEYOR_REPO_BRANCH TRAVIS_COMMIT=$env:APPVEYOR_REPO_BRANCH ./upload.sh /c/projects/AleePlayer/AleePlayer-Windows.zip 2>/dev/null"
+#    sh -c "TRAVIS_BRANCH=$env:APPVEYOR_REPO_BRANCH TRAVIS_COMMIT=$env:APPVEYOR_REPO_BRANCH ./upload.sh /c/projects/AleePlayer/AleePlayer-Windows.zip 2>/dev/null"
 

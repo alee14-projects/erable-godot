@@ -1,21 +1,23 @@
  
 language: cpp
+os:
+  - linux
+  - osx
 sudo: require
-dist: trusty
+dist: xenial
+compiler:
+  - gcc
+osx_image: xcode10.2
 before_install:
-  - sudo apt-get install libtag1-dev qt5-qmake libqt5x11extras5-dev qt5-default qttools5-dev-tools libqt5svg5-dev qtmultimedia5-dev libgtk2.0-dev
+  - export STAGE=before_install
+  - ./travis.sh
 script:
-  - qmake
-  - make -j$(nproc)
-  - make install INSTALL_ROOT=appdir -j$(nproc) install ; find appdir/
-  - wget -c -nv "https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage"
-  - chmod a+x linuxdeployqt-continuous-x86_64.AppImage
-  - "./linuxdeployqt-continuous-x86_64.AppImage appdir/usr/share/applications/*.desktop -bundle-non-qt-libs"
-  - "./linuxdeployqt-continuous-x86_64.AppImage appdir/usr/share/applications/*.desktop -appimage"
+  - export STAGE=script
+  - ./travis.sh
+  
 after_success:
-  - find appdir -executable -type f -exec ldd {} \; | grep " => /usr" | cut -d " " -f 2-3 | sort | uniq
-  - wget -c https://github.com/probonopd/uploadtool/raw/master/upload.sh
-  - bash upload.sh AleePlayer*.AppImage*
+  - export STAGE=after_success
+  - ./travis.sh
   - wget https://raw.githubusercontent.com/k3rn31p4nic/travis-ci-discord-webhook/master/send.sh
   - chmod +x send.sh
   - ./send.sh success $WEBHOOK_URL
@@ -23,10 +25,23 @@ after_failure:
   - wget https://raw.githubusercontent.com/k3rn31p4nic/travis-ci-discord-webhook/master/send.sh
   - chmod +x send.sh
   - ./send.sh failure $WEBHOOK_URL
-
-compiler:
-  - gcc
-dist: xenial
+  
+  
+addons:
+  homebrew:
+    taps:
+      - kde-mac/kde
+    packages:
+      - qt5
+      - gstreamer
+      - gst-plugins-good
+      - gst-plugins-bad
+      - gst-plugins-ugly
+      - cmake
+      - libmusicbrainz
+      - taglib
+      - kf5-extra-cmake-modules
+    update: true
 
 branches:
   except:
