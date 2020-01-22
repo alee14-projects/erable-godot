@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if [ $STAGE = "script" ]; then
   if [ $TRAVIS_OS_NAME = "linux" ]; then
     echo "[TRAVIS] Running qmake"

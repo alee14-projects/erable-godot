@@ -10,14 +10,14 @@ compiler:
 osx_image: xcode10.2
 before_install:
   - export STAGE=before_install
-  - ./travis.sh
+  - ./scripts/travis.sh
 script:
   - export STAGE=script
-  - ./travis.sh
+  - ./scripts/travis.sh
   
 after_success:
   - export STAGE=after_success
-  - ./travis.sh
+  - ./scripts/travis.sh
   - wget https://raw.githubusercontent.com/k3rn31p4nic/travis-ci-discord-webhook/master/send.sh
   - chmod +x send.sh
   - ./send.sh success $WEBHOOK_URL
