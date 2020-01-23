@@ -27,6 +27,7 @@ void Player::mFileDialog()
         msgbox.setText("This audio file has been loaded.");
         msgbox.setIcon(QMessageBox::Information);
         msgbox.exec();
+        ui->volumeSlider->setValue(100);
         return;
     }
 }
@@ -37,8 +38,6 @@ Player::Player(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Player)
 {
-    QSlider volumeSlider;
-    //connect()
     ui->setupUi(this);
 
 }
@@ -57,15 +56,16 @@ void Player::on_actionQuit_triggered()
 
 void Player::on_playButton_pressed()
 {
-    QPushButton playButton;
+    ui->playbackSlider->setEnabled(true);
+    ui->volumeSlider->setEnabled(true);
     if (mPlayer->state() == mPlayer->PlayingState) {
          qDebug() << "Pausing music...";
          mPlayer->pause();
-         playButton.setText("Pause");
+         ui->playButton->setText("Pause");
      } else {
          qDebug() << "Playing music...";
          mPlayer->play();
-         playButton.setText("Play");
+         ui->playButton->setText("Play");
      }
 }
 
@@ -73,6 +73,10 @@ void Player::on_stopButton_pressed()
 {
     qInfo() << "Stopping music...";
     mPlayer->stop();
+    ui->volumeSlider->setEnabled(false);
+    ui->volumeSlider->setValue(100);
+    ui->playbackSlider->setEnabled(false);
+    ui->playbackSlider->setValue(0);
 }
 
 void Player::on_actionAbout_triggered()
@@ -90,4 +94,10 @@ void Player::on_mediaButton_pressed()
 void Player::on_actionOpen_triggered()
 {
     mFileDialog();
+}
+
+
+void Player::on_volumeSlider_sliderMoved(int position)
+{
+    mPlayer->setVolume(position);
 }

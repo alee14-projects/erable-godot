@@ -32,6 +32,8 @@ private slots:
 
     void mFileDialog();
 
+    void on_volumeSlider_sliderMoved(int position);
+
 private:
     Ui::Player *ui;
 };
