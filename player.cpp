@@ -6,13 +6,11 @@
 #include "ui_player.h"
 #include "about.h"
 
-
-
 void Player::mFileDialog()
 {
     QString mFile;
     QMessageBox msgbox;
-    mFile = QFileDialog::getOpenFileName(this, "Open any audio file", QDir::homePath(), tr("Audio Files (*.mp3 *.wav *.ogg)"));
+    mFile = QFileDialog::getOpenFileName(this, "Open any audio file", QDir::homePath(), tr("Audio Files (*.mp3 *.wav *.ogg *.flac)"));
     if (mFile == NULL) {
         qDebug() << "File cannot be found";
         msgbox.setWindowTitle("Uh oh! An error has occured!");
@@ -28,6 +26,7 @@ void Player::mFileDialog()
         msgbox.setIcon(QMessageBox::Information);
         msgbox.exec();
         ui->volumeSlider->setValue(100);
+        ui->playButton->setText(tr("Play"));
         return;
     }
 }
@@ -39,6 +38,9 @@ Player::Player(QWidget *parent)
     , ui(new Ui::Player)
 {
     ui->setupUi(this);
+
+    connect(mPlayer, &QMediaPlayer::positionChanged, this, &Player::on_positionChanged);
+    connect(mPlayer, &QMediaPlayer::durationChanged, this, &Player::on_durationChanged);
 
 }
 
@@ -58,15 +60,17 @@ void Player::on_playButton_pressed()
 {
     ui->playbackSlider->setEnabled(true);
     ui->volumeSlider->setEnabled(true);
+
     if (mPlayer->state() == mPlayer->PlayingState) {
          qDebug() << "Pausing music...";
          mPlayer->pause();
-         ui->playButton->setText("Pause");
+         ui->playButton->setText(tr("Play"));
      } else {
          qDebug() << "Playing music...";
          mPlayer->play();
-         ui->playButton->setText("Play");
+         ui->playButton->setText(tr("Pause"));
      }
+
 }
 
 void Player::on_stopButton_pressed()
@@ -100,4 +104,19 @@ void Player::on_actionOpen_triggered()
 void Player::on_volumeSlider_sliderMoved(int position)
 {
     mPlayer->setVolume(position);
+}
+
+void Player::on_playbackSlider_sliderMoved(int position)
+{
+    mPlayer->setPosition(position);
+}
+
+void Player::on_positionChanged(qint64 position)
+{
+    ui->playbackSlider->setValue(position);
+}
+
+void Player::on_durationChanged(qint64 position)
+{
+    ui->playbackSlider->setMaximum(position);
 }
