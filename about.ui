@@ -53,10 +53,13 @@
       </font>
      </property>
      <property name="text">
-      <string>AleePlayer 0.1 by Alee Productions</string>
+      <string>AleePlayer 0.2 by Alee Productions</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
+     </property>
+     <property name="openExternalLinks">
+      <bool>true</bool>
      </property>
     </widget>
    </item>
