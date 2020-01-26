@@ -6,7 +6,7 @@
 #include "ui_player.h"
 #include "about.h"
 
-void Player::mFileDialog()
+void Player::loadFile()
 {
     QString mFile;
     QMessageBox msgbox;
@@ -92,12 +92,12 @@ void Player::on_actionAbout_triggered()
 
 void Player::on_mediaButton_pressed()
 {
-    mFileDialog();
+    loadFile();
 }
 
 void Player::on_actionOpen_triggered()
 {
-    mFileDialog();
+    loadFile();
 }
 
 

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>607</height>
+    <width>837</width>
+    <height>680</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,6 +15,9 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
+    <item row="4" column="1">
+     <widget class="QWidget" name="widget" native="true"/>
+    </item>
     <item row="1" column="0" colspan="8">
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
@@ -26,19 +29,7 @@
        </attribute>
        <layout class="QGridLayout" name="gridLayout_2">
         <item row="0" column="0">
-         <widget class="QLabel" name="labelComingSoon">
-          <property name="font">
-           <font>
-            <pointsize>14</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Coming soon in a later update!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
+         <widget class="QTreeView" name="library"/>
         </item>
        </layout>
       </widget>
@@ -46,13 +37,11 @@
        <attribute name="title">
         <string>Playlist</string>
        </attribute>
+       <layout class="QGridLayout" name="gridLayout_4"/>
       </widget>
      </widget>
     </item>
-    <item row="4" column="1">
-     <widget class="QWidget" name="widget" native="true"/>
-    </item>
-    <item row="2" column="0" colspan="8">
+    <item row="4" column="4">
      <widget class="QSlider" name="playbackSlider">
       <property name="enabled">
        <bool>false</bool>
@@ -62,7 +51,7 @@
       </property>
      </widget>
     </item>
-    <item row="5" column="0" colspan="8">
+    <item row="2" column="4">
      <widget class="QFrame" name="frame">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
@@ -80,7 +69,7 @@
        <enum>QFrame::Raised</enum>
       </property>
       <layout class="QGridLayout" name="gridLayout_3">
-       <item row="0" column="3">
+       <item row="3" column="3">
         <widget class="QPushButton" name="stopButton">
          <property name="text">
           <string>Stop</string>
@@ -90,20 +79,7 @@
          </property>
         </widget>
        </item>
-       <item row="0" column="4">
-        <spacer name="horizontalSpacer_2">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="0" column="5">
+       <item row="3" column="4">
         <widget class="QPushButton" name="mediaButton">
          <property name="text">
           <string>Browse</string>
@@ -113,33 +89,42 @@
          </property>
         </widget>
        </item>
-       <item row="0" column="2">
-        <spacer name="horizontalSpacer_4">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
+       <item row="7" column="3">
+        <widget class="QLabel" name="labelVolume">
+         <property name="text">
+          <string>Volume</string>
          </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
+        </widget>
        </item>
-       <item row="0" column="6">
-        <spacer name="horizontalSpacer">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
+       <item row="3" column="0">
+        <widget class="QLabel" name="labelTitle">
+         <property name="font">
+          <font>
+           <pointsize>14</pointsize>
+          </font>
          </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
+         <property name="text">
+          <string>Title</string>
          </property>
-        </spacer>
+        </widget>
        </item>
-       <item row="2" column="5" colspan="2">
+       <item row="3" column="2">
+        <widget class="QPushButton" name="playButton">
+         <property name="text">
+          <string>Play</string>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+         <property name="flat">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="3" colspan="2">
         <widget class="QSlider" name="volumeSlider">
          <property name="enabled">
           <bool>false</bool>
@@ -158,41 +143,21 @@
          </property>
         </widget>
        </item>
-       <item row="0" column="1">
-        <widget class="QPushButton" name="playButton">
-         <property name="text">
-          <string>Play</string>
-         </property>
-         <property name="checkable">
-          <bool>false</bool>
-         </property>
-         <property name="checked">
-          <bool>false</bool>
-         </property>
-         <property name="flat">
-          <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0">
-        <spacer name="horizontalSpacer_5">
+       <item row="3" column="1">
+        <spacer name="horizontalSpacer">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Maximum</enum>
+         </property>
          <property name="sizeHint" stdset="0">
           <size>
-           <width>40</width>
+           <width>200</width>
            <height>20</height>
           </size>
          </property>
         </spacer>
-       </item>
-       <item row="3" column="5">
-        <widget class="QLabel" name="labelVolume">
-         <property name="text">
-          <string>Volume</string>
-         </property>
-        </widget>
        </item>
       </layout>
      </widget>
@@ -204,7 +169,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>837</width>
      <height>23</height>
     </rect>
    </property>
@@ -217,7 +182,13 @@
     <addaction name="actionAbout"/>
     <addaction name="actionQuit"/>
    </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>View</string>
+    </property>
+   </widget>
    <addaction name="menuFile"/>
+   <addaction name="menuView"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionQuit">

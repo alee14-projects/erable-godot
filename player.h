@@ -30,7 +30,7 @@ private slots:
 
     void on_stopButton_pressed();
 
-    void mFileDialog();
+    void loadFile();
 
     void on_volumeSlider_sliderMoved(int position);
 
