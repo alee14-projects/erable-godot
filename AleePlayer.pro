@@ -17,11 +17,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     about.cpp \
+    library.cpp \
     main.cpp \
     player.cpp
 
 HEADERS += \
     about.h \
+    library.h \
     player.h
 
 FORMS += \
@@ -29,7 +31,9 @@ FORMS += \
     player.ui
 
 TRANSLATIONS += \
-    AleePlayer_en_CA.ts
+    translations/en_CA.ts \
+    translations/fr_CA.ts \
+    translations/vi_VN.ts
 
 
 unix:!macx:!android {

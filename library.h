@@ -15,25 +15,25 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
-#include "about.h"
-#include "ui_about.h"
-#include <QDebug>
+#ifndef LIBRARY_H
+#define LIBRARY_H
 
-About::About(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::About)
+#include <QAbstractListModel>
+#include <QAbstractTableModel>
+
+class Library : public QAbstractListModel
 {
-    ui->setupUi(this);
+    Q_OBJECT
 
-    ui->label_3->setTextFormat(Qt::RichText);
+public:
+    explicit Library(QObject *parent = nullptr);
 
-    ui->label_3->setTextInteractionFlags(Qt::TextBrowserInteraction);
+    // Basic functionality:
+    int rowCount(const QModelIndex &parent = QModelIndex()) const override;
 
-    ui->label_3->setOpenExternalLinks(true);
-}
+    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
 
-About::~About()
-{
-    qDebug() << "Closing about dialog";
-    delete ui;
-}
+private:
+};
+
+#endif // LIBRARY_H

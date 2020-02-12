@@ -1,6 +1,24 @@
+/*
+    AleePlayer: Music player in Qt
+    Copyright (C) 2020 Alee Productions
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+*/
 #include "player.h"
 #include <QMessageBox>
 #include <QDebug>
+#include <QTranslator>
 #include <QFile>
 #include <QDir>
 
@@ -14,12 +32,16 @@ int main(int argc, char *argv[])
 
     //QDir directory(QDir::homePath() + "/.alee-productions/AleePlayer");
 
-   //File file(directory.absoluteFilePath("test.txt"));
+    //File file(directory.absoluteFilePath("test.txt"));
 
     //file.open(QFile::WriteOnly);
     //file.close();
 
     QApplication a(argc, argv);
+    QTranslator translator;
+    translator.load(QLocale(), "/home/andrew/Documents/GitHub/AleePlayer/translations/");
+    a.installTranslator(&translator);
+
     Player musicPlayer;
     musicPlayer.show();
     return a.exec();
