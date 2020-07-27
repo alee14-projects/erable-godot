@@ -11,6 +11,6 @@ call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary
 qmake AleePlayer.pro "CONFIG+=release"
 nmake release
 mkdir deploy
-copy release\AleePlayer.exe deploy
+copy release\AleeAudioPlayer.exe deploy
 cd deploy
-windeployqt AleePlayer.exe -multimedia
+windeployqt AleeAudioPlayer.exe -multimedia
