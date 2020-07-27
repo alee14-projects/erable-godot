@@ -1,5 +1,5 @@
 /*
-    AleePlayer: Music player in Qt
+    Alee Audio Player: Audio player in Qt
     Copyright (C) 2020 Alee Productions
 
     This program is free software: you can redistribute it and/or modify
@@ -23,7 +23,8 @@
 void Player::loadFile()
 {
     QMessageBox msgbox;
-    mFile = QFileDialog::getOpenFileName(this, tr("Open any audio file"), QDir::homePath(), tr("Audio Files (*.mp3 *.wav *.ogg *.flac *.mp4)"));
+
+    mFile = QFileDialog::getOpenFileName(this, tr("Open any audio file"), QDir::homePath(), tr("Audio Files (*.mp3 *.wav *.ogg *.flac)"));
     if (mFile == NULL) {
         qDebug() << tr("File cannot be found");
         msgbox.setWindowTitle(tr("Uh oh! An error has occured!"));
@@ -39,7 +40,18 @@ void Player::loadFile()
         msgbox.setIcon(QMessageBox::Information);
         msgbox.exec();
         ui->volumeSlider->setValue(100);
-        ui->playButton->setText(tr("Play"));
+        ui->playbackSlider->setEnabled(true);
+
+        char* fn = new char [mFile.toStdString().size()+1];
+        strcpy( fn, mFile.toStdString().c_str() );
+        TagLib::FileRef* fileref = new TagLib::FileRef(fn);
+
+        if (fileref->tag() != nullptr) {
+            TagLib::String title = fileref->tag()->title();
+            const char* title_ = title.to8Bit(true).c_str();
+            ui->labelTitle->setText(title_);
+        }
+
         return;
     }
 }
@@ -51,7 +63,6 @@ Player::Player(QWidget *parent)
     , ui(new Ui::Player)
 {
     ui->setupUi(this);
-
     ui->library->setModel(new Library());
 
     connect(mPlayer, &QMediaPlayer::positionChanged, this, &Player::on_positionChanged);
@@ -61,7 +72,7 @@ Player::Player(QWidget *parent)
 
 Player::~Player()
 {
-    qInfo() << tr("Closing AleePlayer...");
+    qInfo() << tr("Closing Alee Audio Player...");
     mPlayer->deleteLater();
     delete ui;
 }
@@ -84,8 +95,6 @@ void Player::on_playButton_pressed()
          qDebug() << tr("Playing music...");
          mPlayer->play();
          ui->playButton->setText(tr("Pause"));
-         amount++;
-         //qDebug() << "You have pressed play for" << amount << "time(s).";
      }
 
 }
@@ -94,7 +103,6 @@ void Player::on_stopButton_pressed()
 {
     qInfo() << tr("Stopping music...");
     mPlayer->stop();
-    ui->volumeSlider->setEnabled(false);
     ui->volumeSlider->setValue(100);
     ui->playbackSlider->setEnabled(false);
     ui->playbackSlider->setValue(0);

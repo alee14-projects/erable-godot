@@ -1,5 +1,5 @@
 /*
-    AleePlayer: Music player in Qt
+    Alee Audio Player: Audio player in Qt
     Copyright (C) 2020 Alee Productions
 
     This program is free software: you can redistribute it and/or modify
@@ -23,6 +23,7 @@
 #include <QDebug>
 #include <QFileDialog>
 #include <QMessageBox>
+#include <taglib/fileref.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Player; }

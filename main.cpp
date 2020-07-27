@@ -1,5 +1,5 @@
 /*
-    AleePlayer: Music player in Qt
+    Alee Audio Player: Audio player in Qt
     Copyright (C) 2020 Alee Productions
 
     This program is free software: you can redistribute it and/or modify
@@ -26,7 +26,7 @@
 
 int main(int argc, char *argv[])
 {
-    qInfo() << "AleePlayer: A music player by Alee Productions. Licensed with GPL-3.0.\n";
+    qInfo() << "Alee Audio Player: A music player by Alee Productions. Licensed with GPL-3.0.\n";
 
     qDebug() << "Creating files...";
 
@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 
     QApplication a(argc, argv);
     QTranslator translator;
-    translator.load(QLocale(), "/home/andrew/Documents/GitHub/AleePlayer/translations/");
+    translator.load(QLocale(), "/home/andrew/Documents/GitHub/Alee Audio Player/translations/");
     a.installTranslator(&translator);
 
     Player musicPlayer;

@@ -38,16 +38,17 @@ TRANSLATIONS += \
 
 unix:!macx:!android {
 
-    TARGET = AleePlayer
+    TARGET = AleeAudioPlayer
 
     target.path = /usr/bin
 
     desktop.path = /usr/share/applications
-    desktop.files = AleePlayer.desktop
+    desktop.files = Alee Audio Player.desktop
 
     icon.path = /usr/share/icons/hicolor/scalable/apps/
-    icon.files = ALP.svg
+    icon.files = AAP.svg
 
+    LIBS += -ltag
 
     INSTALLS += target desktop icon
 }

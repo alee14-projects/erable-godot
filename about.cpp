@@ -1,5 +1,5 @@
 /*
-    AleePlayer: Music player in Qt
+    Alee Audio Player: Audio player in Qt
     Copyright (C) 2020 Alee Productions
 
     This program is free software: you can redistribute it and/or modify
