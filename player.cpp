@@ -48,8 +48,11 @@ void Player::loadFile()
 
         if (fileref->tag() != nullptr) {
             TagLib::String title = fileref->tag()->title();
+            TagLib::String artist = fileref->tag()->artist();
             const char* title_ = title.to8Bit(true).c_str();
+            const char* artist_ = artist.to8Bit(true).c_str();
             ui->labelTitle->setText(title_);
+            ui->labelAuthor->setText(artist_);
         }
 
         return;

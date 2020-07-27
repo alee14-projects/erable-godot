@@ -37,6 +37,7 @@ public:
     Player(QWidget *parent = nullptr);
     ~Player();
     QMediaPlayer* mPlayer = new QMediaPlayer();
+    QString mFile;
 
     int amount = 0;
 
@@ -66,7 +67,6 @@ private slots:
 
 private:
     Ui::Player *ui;
-    QString mFile;
     QStringListModel *model;
 };
 #endif // PLAYER_H

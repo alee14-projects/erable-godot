@@ -30,7 +30,8 @@ int main(int argc, char *argv[])
 
     qDebug() << "Creating files...";
 
-    //QDir directory(QDir::homePath() + "/.alee-productions/AleePlayer");
+    //Change this to appdata or .local/share in linux
+    //QDir directory(QDir::homePath() + "/.alee-productions/Alee Audio Player");
 
     //File file(directory.absoluteFilePath("test.txt"));
 

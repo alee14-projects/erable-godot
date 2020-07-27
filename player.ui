@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Alee Audio Player</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>AAP.svg</normaloff>AAP.svg</iconset>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
     <item row="4" column="1">
@@ -159,6 +163,18 @@
          </property>
         </spacer>
        </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="labelAuthor">
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Author</string>
+         </property>
+        </widget>
+       </item>
       </layout>
      </widget>
     </item>
@@ -181,11 +197,6 @@
     <addaction name="separator"/>
     <addaction name="actionQuit"/>
    </widget>
-   <widget class="QMenu" name="menuView">
-    <property name="title">
-     <string>View</string>
-    </property>
-   </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
      <string>Help</string>
@@ -193,7 +204,6 @@
     <addaction name="actionAbout"/>
    </widget>
    <addaction name="menuFile"/>
-   <addaction name="menuView"/>
    <addaction name="menuHelp"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
