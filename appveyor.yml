@@ -10,8 +10,8 @@ clone_depth: 5
 environment:
   GITHUB_TOKEN:
     secure: hFxvrP00pBfZqJGfgLLZgkXPI5ZPGND3ToEURxPW5K5PYcuNaG0oiipX5b/O+dDR
-  REPO_SLUG: aleeproductions/AleePlayer
-  deploy_project: AleePlayer
+  REPO_SLUG: aleeproductions/Alee-Audio-Player
+  deploy_project: Alee Audio Player
   deploy_version: ''
   deploy_artifact: ''
     
@@ -22,7 +22,7 @@ test: off
 
 artifacts:
 - path: deploy
-  name: AleePlayer-Windows
+  name: Alee-Audio-Player-Windows
   
   
 before_deploy:
