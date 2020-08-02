@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Installer>
+    <Name>AleePlayer</Name>
+    <Version>0.1.0</Version>
+    <Title>AleePlayer Installer</Title>
+    <Publisher>Alee Productions</Publisher>
+    <StartMenuDir>AleePlayer</StartMenuDir>
+	<Logo>AAP.png</Logo>
+    <TargetDir>@ApplicationsDir@/Alee Productions/AleePlayer</TargetDir>
+</Installer>
