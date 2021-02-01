@@ -6,7 +6,7 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Alee_Audio_Player.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
-        Title="Alee_Audio_Player">
+        Title="Alee Audio Player">
 
     <Design.DataContext>
         <vm:MainWindowViewModel/>
