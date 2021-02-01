@@ -20,6 +20,7 @@
 
 #include <QAbstractListModel>
 #include <QAbstractTableModel>
+#include <QSize>
 
 class Library : public QAbstractListModel
 {
@@ -27,6 +28,8 @@ class Library : public QAbstractListModel
 
 public:
     explicit Library(QObject *parent = nullptr);
+
+    QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override;
 
     // Basic functionality:
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;

@@ -23,6 +23,7 @@
 #include <QDebug>
 #include <QFileDialog>
 #include <QMessageBox>
+#include <QDesktopServices>
 #include <taglib/fileref.h>
 
 QT_BEGIN_NAMESPACE
@@ -64,6 +65,8 @@ private slots:
     void on_positionChanged(qint64 position);
 
     void on_durationChanged(qint64 position);
+
+    void on_actionBugReport_triggered();
 
 private:
     Ui::Player *ui;

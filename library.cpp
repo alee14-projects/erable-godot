@@ -22,6 +22,24 @@ Library::Library(QObject *parent)
 {
 }
 
+QVariant Library::headerData(int section, Qt::Orientation orientation, int role) const
+{
+    if (role == Qt::DisplayRole) {
+        switch (section) {
+            case 0:
+                return "Name";
+            case 1:
+                return "Artist";
+            case 2:
+                return "Album";
+        }
+    } else if (role == Qt::SizeHintRole) {
+        return QSize(500, 29);
+    }
+    return QAbstractItemModel::headerData(section, orientation, role);
+}
+
+
 int Library::rowCount(const QModelIndex &parent) const
 {
     // For list models only the root node (an invalid parent) should return the list's size. For all

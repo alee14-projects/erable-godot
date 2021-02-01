@@ -5,17 +5,17 @@
     <name>About</name>
     <message>
         <location filename="../about.ui" line="26"/>
-        <source>About - Alee Music Player</source>
+        <source>About - Alee Audio Player</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../about.ui" line="56"/>
-        <source>Alee Music Player 0.2 by Alee Productions</source>
+        <source>Alee Audio Player 0.2 by Alee Productions</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../about.ui" line="74"/>
-        <source>Licensed with GPL-3.0</source>
+        <source>Written in C++ and Qt, Licensed with GPL-3.0</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -30,7 +30,7 @@
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Noto Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;    Alee Music Player: An audio player written in Qt&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;    Alee Audio Player: An audio player written in Qt&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;    Copyright (C) 2020 Alee Productions&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;    This program is free software: you can redistribute it and/or modify&lt;/p&gt;
@@ -52,149 +52,158 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Player</name>
     <message>
-        <location filename="../player.ui" line="14"/>
-        <source>Alee Music Player</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../player.ui" line="28"/>
+        <location filename="../player.ui" line="165"/>
         <source>Library</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../player.ui" line="38"/>
-        <source>Playlist</source>
+        <location filename="../player.ui" line="14"/>
+        <source>Alee Audio Player</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../player.ui" line="75"/>
+        <location filename="../player.ui" line="43"/>
         <source>Stop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../player.ui" line="85"/>
+        <location filename="../player.ui" line="53"/>
         <source>Browse</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../player.ui" line="95"/>
+        <location filename="../player.ui" line="63"/>
         <source>Volume</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../player.ui" line="107"/>
+        <location filename="../player.ui" line="75"/>
         <source>Title</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../player.ui" line="114"/>
-        <location filename="../player.cpp" line="42"/>
-        <location filename="../player.cpp" line="82"/>
+        <location filename="../player.ui" line="82"/>
+        <location filename="../player.cpp" line="96"/>
         <source>Play</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../player.ui" line="178"/>
+        <location filename="../player.ui" line="138"/>
+        <source>Author</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../player.ui" line="175"/>
+        <source>Visualization</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../player.ui" line="194"/>
         <source>File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../player.ui" line="187"/>
-        <source>View</source>
+        <location filename="../player.ui" line="202"/>
+        <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../player.ui" line="196"/>
+        <location filename="../player.ui" line="234"/>
+        <source>Bug Report</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../player.ui" line="213"/>
         <source>Quit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../player.ui" line="199"/>
+        <location filename="../player.ui" line="216"/>
         <source>Ctrl+Q</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../player.ui" line="204"/>
+        <location filename="../player.ui" line="221"/>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../player.ui" line="209"/>
+        <location filename="../player.ui" line="226"/>
         <source>Open</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../player.ui" line="212"/>
+        <location filename="../player.ui" line="229"/>
         <source>Ctrl+O</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../player.cpp" line="26"/>
+        <location filename="../player.cpp" line="27"/>
         <source>Open any audio file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../player.cpp" line="26"/>
-        <source>Audio Files (*.mp3 *.wav *.ogg *.flac *.mp4)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../player.cpp" line="28"/>
-        <source>File cannot be found</source>
+        <location filename="../player.cpp" line="27"/>
+        <source>Audio Files (*.mp3 *.wav *.ogg *.flac *.wma)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../player.cpp" line="29"/>
-        <source>Uh oh! An error has occured!</source>
+        <source>File cannot be found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../player.cpp" line="30"/>
+        <source>Uh oh! An error has occured!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../player.cpp" line="31"/>
         <source>File is invalid. Maybe try loading a valid audio file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../player.cpp" line="36"/>
+        <location filename="../player.cpp" line="37"/>
         <source>Opening</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../player.cpp" line="37"/>
+        <location filename="../player.cpp" line="38"/>
         <source>Success!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../player.cpp" line="38"/>
+        <location filename="../player.cpp" line="39"/>
         <source>This audio file has been loaded.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../player.cpp" line="64"/>
-        <source>Closing AleePlayer...</source>
+        <location filename="../player.cpp" line="78"/>
+        <source>Closing Alee Audio Player...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../player.cpp" line="80"/>
+        <location filename="../player.cpp" line="94"/>
         <source>Pausing music...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../player.cpp" line="84"/>
+        <location filename="../player.cpp" line="98"/>
         <source>Playing music...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../player.cpp" line="86"/>
+        <location filename="../player.cpp" line="100"/>
         <source>Pause</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../player.cpp" line="95"/>
+        <location filename="../player.cpp" line="107"/>
         <source>Stopping music...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../player.cpp" line="105"/>
+        <location filename="../player.cpp" line="116"/>
         <source>Opening about dialog</source>
         <translation type="unfinished"></translation>
     </message>

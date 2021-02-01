@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
     qDebug() << "Creating files...";
 
     //Change this to appdata or .local/share in linux
-    //QDir directory(QDir::homePath() + "/.alee-productions/Alee Audio Player");
+    //QDir directory(QDir::homePath() + "/.aleeaudioplayer");
 
     //File file(directory.absoluteFilePath("test.txt"));
 
@@ -39,6 +39,10 @@ int main(int argc, char *argv[])
     //file.close();
 
     QApplication a(argc, argv);
+    a.setApplicationName("Alee Audio Player");
+    a.setApplicationVersion("0.2.0");
+    a.setOrganizationName("Alee Productions");
+
     QTranslator translator;
     translator.load(QLocale(), "/home/andrew/Documents/GitHub/Alee Audio Player/translations/");
     a.installTranslator(&translator);

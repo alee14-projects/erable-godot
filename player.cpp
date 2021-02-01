@@ -24,7 +24,7 @@ void Player::loadFile()
 {
     QMessageBox msgbox;
 
-    mFile = QFileDialog::getOpenFileName(this, tr("Open any audio file"), QDir::homePath(), tr("Audio Files (*.mp3 *.wav *.ogg *.flac)"));
+    mFile = QFileDialog::getOpenFileName(this, tr("Open any audio file"), QDir::homePath(), tr("Audio Files (*.mp3 *.wav *.ogg *.flac *.wma)"));
     if (mFile == NULL) {
         qDebug() << tr("File cannot be found");
         msgbox.setWindowTitle(tr("Uh oh! An error has occured!"));
@@ -147,4 +147,9 @@ void Player::on_positionChanged(qint64 position)
 void Player::on_durationChanged(qint64 position)
 {
     ui->playbackSlider->setMaximum(position);
+}
+
+void Player::on_actionBugReport_triggered()
+{
+    QDesktopServices::openUrl(QUrl("https://github.com/aleeproductions/Alee-Audio-Player/issues", QUrl::TolerantMode));
 }
