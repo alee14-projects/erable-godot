@@ -3,7 +3,7 @@ using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.ReactiveUI;
 
-namespace Alee_Audio_Player
+namespace AleeAudioPlayer
 {
     class Program
     {

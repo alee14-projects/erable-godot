@@ -1,9 +1,9 @@
 using System;
 using Avalonia.Controls;
 using Avalonia.Controls.Templates;
-using Alee_Audio_Player.ViewModels;
+using AleeAudioPlayer.ViewModels;
 
-namespace Alee_Audio_Player
+namespace AleeAudioPlayer
 {
     public class ViewLocator : IDataTemplate
     {

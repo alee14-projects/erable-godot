@@ -1,10 +1,10 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using Alee_Audio_Player.ViewModels;
-using Alee_Audio_Player.Views;
+using AleeAudioPlayer.ViewModels;
+using AleeAudioPlayer.Views;
 
-namespace Alee_Audio_Player
+namespace AleeAudioPlayer
 {
     public class App : Application
     {

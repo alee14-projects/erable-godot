@@ -2,7 +2,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace Alee_Audio_Player.Views
+namespace AleeAudioPlayer.Views
 {
     public class MainWindow : Window
     {

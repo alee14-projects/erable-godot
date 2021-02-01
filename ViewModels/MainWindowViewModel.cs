@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Alee_Audio_Player.ViewModels
+namespace AleeAudioPlayer.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
