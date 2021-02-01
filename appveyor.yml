@@ -1,8 +1,9 @@
 version: 1.0.{build}
 image: Visual Studio 2019
 before_build:
-- cmd: dotnet restore
+- ps: dotnet restore Alee\ Audio\ Player.csproj
 build:
   verbosity: normal
 before_deploy:
 - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/deploy.ps1'))
+- ps: 7z a AleeAudioPlayer-Windows.zip bin\Debug\net5.0
