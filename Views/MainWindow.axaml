@@ -13,8 +13,7 @@
     </Design.DataContext>
     <StackPanel>
         <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
-        <Button Name="PlayButton" Width="50" >Play</Button>
+        <Button Name="PlayButton" Width="50" Command="{Binding PlayFunction}" >Play</Button>
         <Button Name="StopButton" Width="50" >Stop</Button>
     </StackPanel>
 </Window>

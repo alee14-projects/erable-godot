@@ -14,5 +14,6 @@
     <PackageReference Include="Avalonia.Desktop" Version="0.10.0" />
     <PackageReference Include="Avalonia.Diagnostics" Version="0.10.0" />
     <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.0" />
+    <PackageReference Include="gstreamer-sharp-netcore" Version="0.0.8" />
   </ItemGroup>
 </Project>
