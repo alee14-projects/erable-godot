@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using ReactiveUI;
 
-namespace AleeAudioPlayer.ViewModels
+namespace Erable.ViewModels
 {
     public class ViewModelBase : ReactiveObject
     {

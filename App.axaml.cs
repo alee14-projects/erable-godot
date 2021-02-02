@@ -1,10 +1,10 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using AleeAudioPlayer.ViewModels;
-using AleeAudioPlayer.Views;
+using Erable.ViewModels;
+using Erable.Views;
 
-namespace AleeAudioPlayer
+namespace Erable
 {
     public class App : Application
     {

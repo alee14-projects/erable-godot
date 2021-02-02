@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Avalonia.Controls;
 using Gst;
 
-namespace AleeAudioPlayer.ViewModels
+namespace Erable.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        public string Greeting => "Welcome to Alee Audio Player!";
+        public string Greeting => "Welcome to Erable Audio Player!";
 
         public void PlayFunction(string[] args)
         {
@@ -24,6 +25,12 @@ namespace AleeAudioPlayer.ViewModels
 
             // Free resources
             //pipeline.SetState (State.Null);
+        }
+
+        public void BrowseFunction()
+        {
+            //OpenFileDialog dialog = new OpenFileDialog();
+            //dialog.Filters.Add(new FileDialogFilter() {Name = "Audio Files", Extensions = {"mp3"}});
         }
     }
 }

@@ -1,9 +1,9 @@
 using System;
 using Avalonia.Controls;
 using Avalonia.Controls.Templates;
-using AleeAudioPlayer.ViewModels;
+using Erable.ViewModels;
 
-namespace AleeAudioPlayer
+namespace Erable
 {
     public class ViewLocator : IDataTemplate
     {

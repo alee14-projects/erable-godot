@@ -1,19 +1,20 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:vm="using:AleeAudioPlayer.ViewModels"
+        xmlns:vm="using:Erable.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-        x:Class="AleeAudioPlayer.Views.MainWindow"
+        x:Class="Erable.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
-        Title="Alee Audio Player">
+        Title="Erable Audio Player">
 
     <Design.DataContext>
         <vm:MainWindowViewModel/>
     </Design.DataContext>
     <StackPanel>
         <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Button Name="PlayButton" Width="50" Command="{Binding PlayFunction}" >Play</Button>
-        <Button Name="StopButton" Width="50" >Stop</Button>
+        <Button Name="PlayButton" Width="80" Command="{Binding PlayFunction}" >Play</Button>
+        <Button Name="StopButton" Width="80" >Stop</Button>
+        <Button Name="BrowseButton" Width="80" Command="{Binding BrowseFunction }" >Browse</Button>
     </StackPanel>
 </Window>
