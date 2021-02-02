@@ -4,7 +4,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Erable", "Erable.csproj", "{7816A5DD-C5B1-498D-9980-C36458D7465F}"
-i
+
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
