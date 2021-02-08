@@ -1,9 +1,9 @@
 version: 1.0.{build}
 image: Visual Studio 2019
 before_build:
-- ps: dotnet restore ./Erable.csproj
+- ps: dotnet restore
 build:
   verbosity: normal
 before_deploy:
+- ps: 7z a Erable-Windows.zip Erable\bin\Debug\net5.0
 - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/deploy.ps1'))
-- ps: 7z a Erable-Windows.zip bin\Debug\net5.0

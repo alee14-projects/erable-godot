@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <PackageVersion>0.0.1</PackageVersion>
+        <Company>Alee Productions</Company>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="gstreamer-sharp-netcore" Version="0.0.8" />
+    </ItemGroup>
+
+</Project>

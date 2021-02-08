@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Erable", "Erable\Erable.csproj", "{2A160FE3-0D4C-4834-A5CF-FE87930E31B2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sirop.Backend", "Sirop.Backend\Sirop.Backend.csproj", "{92930D7F-5FCF-4845-9CF9-E918D67469B1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,17 @@ Global
 		{2A160FE3-0D4C-4834-A5CF-FE87930E31B2}.Release|x64.Build.0 = Release|Any CPU
 		{2A160FE3-0D4C-4834-A5CF-FE87930E31B2}.Release|x86.ActiveCfg = Release|Any CPU
 		{2A160FE3-0D4C-4834-A5CF-FE87930E31B2}.Release|x86.Build.0 = Release|Any CPU
+		{92930D7F-5FCF-4845-9CF9-E918D67469B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92930D7F-5FCF-4845-9CF9-E918D67469B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92930D7F-5FCF-4845-9CF9-E918D67469B1}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{92930D7F-5FCF-4845-9CF9-E918D67469B1}.Debug|x64.Build.0 = Debug|Any CPU
+		{92930D7F-5FCF-4845-9CF9-E918D67469B1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{92930D7F-5FCF-4845-9CF9-E918D67469B1}.Debug|x86.Build.0 = Debug|Any CPU
+		{92930D7F-5FCF-4845-9CF9-E918D67469B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92930D7F-5FCF-4845-9CF9-E918D67469B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92930D7F-5FCF-4845-9CF9-E918D67469B1}.Release|x64.ActiveCfg = Release|Any CPU
+		{92930D7F-5FCF-4845-9CF9-E918D67469B1}.Release|x64.Build.0 = Release|Any CPU
+		{92930D7F-5FCF-4845-9CF9-E918D67469B1}.Release|x86.ActiveCfg = Release|Any CPU
+		{92930D7F-5FCF-4845-9CF9-E918D67469B1}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

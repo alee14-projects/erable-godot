@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-        x:Class="Erable.Views.MainWindow"
+        x:Class="Erable.Views.MainWindow" 
         Icon="/Assets/avalonia-logo.ico"
         Title="Erable">
 
@@ -16,5 +16,7 @@
         <Button Name="PlayButton" Width="80" Command="{Binding PlayFunction}" >Play</Button>
         <Button Name="StopButton" Width="80" >Stop</Button>
         <Button Name="BrowseButton" Width="80" Command="{Binding BrowseFunction }" >Browse</Button>
+        <Button Name="MessageBoxTest" Width="80" Command="{Binding MsgBoxTest }" >Message Box Test</Button>
+
     </StackPanel>
 </Window>
