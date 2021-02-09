@@ -1,40 +1,26 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using Avalonia.Controls;
 using Erable.Views;
-using Gst;
+using Sirop.Backend;
 
 namespace Erable.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        public string Greeting => "Welcome to Erable Audio Player!";
 
         public void PlayFunction()
         {
-            Thread t = new (AudioPlay);
+            Thread t = new (Playback.PlayAudio);
             t.Start();
         }
-        
-        static void AudioPlay()
+
+        public void StopFunction()
         {
-            Application.Init();
-            // Build the pipeline
-            var pipeline = Parse.Launch("playbin uri=file:///home/andrew/Music/4616-werq-by-kevin-macleod.mp3");
-
-            // Start playing
-            pipeline.SetState(State.Playing);
-
-            // Wait until error or EOS
-            var bus = pipeline.Bus;
-            var msg = bus.TimedPopFiltered (Constants.CLOCK_TIME_NONE, MessageType.Eos | MessageType.Error);
-
-            // Free resources
-            pipeline.SetState (State.Null);
             
         }
         
-
-        public async void BrowseFunction()
+        public void BrowseFunction()
         {
             var dialog = new OpenFileDialog();
           //  dialog.Title
@@ -60,6 +46,11 @@ namespace Erable.ViewModels
         public void MsgBoxTest()
         {
             MessageBox.Show(new MainWindow(), "Hello world", "Test Title", MessageBox.MessageBoxButtons.Ok);
+        }
+
+        public void Quit()
+        {
+            Environment.Exit(0);
         }
         
     }

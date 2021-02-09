@@ -5,18 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Erable.Views.MainWindow" 
-        Icon="/Assets/avalonia-logo.ico"
+        Width="800"
+        Height="450"
+        Icon="/Assets/erable.png"
         Title="Erable">
 
     <Design.DataContext>
         <vm:MainWindowViewModel/>
     </Design.DataContext>
     <StackPanel>
-        <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <DockPanel>
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="_File">
+                    <MenuItem Header="_Open..."/>
+                    <Separator/>
+                    <MenuItem Header="_Exit" PointerPressed="InputElement_OnPointerPressed"/>
+                </MenuItem>
+                <MenuItem Header="_Help">
+                    <MenuItem Header="_About"/>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
         <Button Name="PlayButton" Width="80" Command="{Binding PlayFunction}" >Play</Button>
-        <Button Name="StopButton" Width="80" >Stop</Button>
+        <Button Name="StopButton" Width="80" Command="{Binding StopFunction}">Stop</Button>
         <Button Name="BrowseButton" Width="80" Command="{Binding BrowseFunction }" >Browse</Button>
-        <Button Name="MessageBoxTest" Width="80" Command="{Binding MsgBoxTest }" >Message Box Test</Button>
-
+        <!--<Button Name="MessageBoxTest" Width="80" Command="{Binding MsgBoxTest }" >Message Box Test</Button>-->
+        <Slider Name="AudioSlider"/>
     </StackPanel>
 </Window>
