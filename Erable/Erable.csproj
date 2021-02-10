@@ -37,9 +37,16 @@
     <PackageReference Include="Avalonia.Desktop" Version="0.10.0" />
     <PackageReference Include="Avalonia.Diagnostics" Version="0.10.0" />
     <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.0" />
+    <PackageReference Include="DiscordRichPresence" Version="1.0.175" />
     <PackageReference Include="Dotnet.Bundle" Version="0.9.13" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Sirop.Backend\Sirop.Backend.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\About.axaml.cs">
+      <DependentUpon>About.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

@@ -11,8 +11,15 @@ namespace Erable.ViewModels
 
         public void PlayFunction()
         {
-            Thread t = new (Playback.PlayAudio);
-            t.Start();
+            try
+            {
+                Thread t = new(Playback.PlayAudio);
+                t.Start();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(new MainWindow(), ex.ToString(), "Error", MessageBox.MessageBoxButtons.Ok);
+            }
         }
 
         public void StopFunction()
@@ -48,10 +55,9 @@ namespace Erable.ViewModels
             MessageBox.Show(new MainWindow(), "Hello world", "Test Title", MessageBox.MessageBoxButtons.Ok);
         }
 
-        public void Quit()
+        public void ExceptionButton()
         {
-            Environment.Exit(0);
+            throw new Exception();
         }
-        
     }
 }

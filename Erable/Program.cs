@@ -1,6 +1,5 @@
 ﻿using System;
 using Avalonia;
-using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.ReactiveUI;
 
 namespace Erable
@@ -13,13 +12,29 @@ namespace Erable
         public static void Main(string[] args)
         {
             Console.WriteLine("Erable: Audio Player by Alee Productions");
-            Console.WriteLine("Running on .NET " + Environment.Version + ", and " + Environment.OSVersion);
-            #if DEBUG
-            Console.WriteLine("Opening MainWindow...");
-            #endif
-            try { BuildAvaloniaApp().StartWithClassicDesktopLifetime(args); }catch (Exception ex) { Console.WriteLine(ex); }
-        } 
 
+            AppDomain.CurrentDomain.UnhandledException += ErrorHandler;
+
+            #if DEBUG
+            Console.WriteLine("Running on .NET " + Environment.Version + ", and " + Environment.OSVersion);
+            Console.WriteLine("Opening window...");
+            #endif
+            
+            DiscordRpc.Initialize();
+            
+            BuildAvaloniaApp().StartWithClassicDesktopLifetime(args);
+
+        }
+
+        static void ErrorHandler(object sender, UnhandledExceptionEventArgs e)
+        {
+            Console.WriteLine("Oh no! An error has occurred!");
+            Console.WriteLine("OS Version: " + Environment.OSVersion);
+            Console.WriteLine(".NET Version: " + Environment.Version);
+            Console.WriteLine("Report this to the developers...");
+            Console.WriteLine("Did this crashed? " + e.IsTerminating);
+        }
+        
         // Avalonia configuration, don't remove; also used by visual designer.
         static AppBuilder BuildAvaloniaApp()
             => AppBuilder.Configure<App>()

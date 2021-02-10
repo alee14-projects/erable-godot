@@ -8,6 +8,7 @@
 
     <ItemGroup>
       <PackageReference Include="gstreamer-sharp-netcore" Version="0.0.8" />
+      <PackageReference Include="LiteDB" Version="5.0.10" />
     </ItemGroup>
 
 </Project>

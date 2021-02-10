@@ -1,0 +1,17 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="150"
+        x:Class="Erable.Views.About" 
+        Width="600"
+        Height="150"
+        Icon="/Assets/erable.png"
+        Title="About Erable">
+    <StackPanel Margin="10">
+        <TextBlock HorizontalAlignment="Center" FontSize="30">About Erable 0.1 Pre-Alpha</TextBlock> 
+        <TextBlock HorizontalAlignment="Center" FontSize="20">© Copyright 2021, Alee Productions</TextBlock>
+        <TextBlock HorizontalAlignment="Center" FontSize="20">Licensed with GPL-3.0</TextBlock>
+        <TextBlock HorizontalAlignment="Center" FontSize="20">Report Bugs at https://git.io/JtrAO</TextBlock>
+    </StackPanel>
+</Window>
