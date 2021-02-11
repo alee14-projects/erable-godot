@@ -1,8 +1,8 @@
-namespace Erable
+namespace Sirop.Backend
 {
     public class Version
     {
-        public string ErableVersion = "0.1";
-        public string SiropVersion = "0.1";
+        public static string ErableVersion = "0.1";
+        public static string SiropVersion = "0.1";
     }
 }

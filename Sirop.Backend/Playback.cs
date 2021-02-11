@@ -40,7 +40,7 @@ namespace Sirop.Backend
             pipeline.SetState(State.Null);
             
 
-    }
+        }
 
         public static void StopAudio()
         {
