@@ -30,7 +30,8 @@ namespace Erable
         // yet and stuff might break.
         public static void Main(string[] args)
         {
-            Console.WriteLine("Erable: Audio Player by Alee Productions");
+            Console.WriteLine("Erable {0}: Audio Player by Alee Productions", Sirop.Backend.Version.ErableVersion);
+            Console.WriteLine("Powered by Sirop Backend {0} ", Sirop.Backend.Version.SiropVersion);
 
             AppDomain.CurrentDomain.UnhandledException += ErrorHandler;
 
@@ -46,6 +47,8 @@ namespace Erable
         static void ErrorHandler(object sender, UnhandledExceptionEventArgs e)
         {
             Console.WriteLine("Oh no! An error has occurred!");
+            Console.WriteLine("Erable Version: " + Sirop.Backend.Version.ErableVersion);
+            Console.WriteLine("Sirop Version: " + Sirop.Backend.Version.SiropVersion);
             Console.WriteLine("OS Version: " + Environment.OSVersion);
             Console.WriteLine(".NET Version: " + Environment.Version);
             Console.WriteLine("Report this to the developers...");
