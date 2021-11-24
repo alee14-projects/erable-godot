@@ -12,6 +12,9 @@ config_version=4
 
 config/name="Erable"
 config/description="Audio Player"
+run/main_scene="res://App.tscn"
+boot_splash/image=false
+config/icon="res://erable.png"
 
 [rendering]
 

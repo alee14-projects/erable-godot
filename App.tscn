@@ -1,0 +1,35 @@
+[gd_scene format=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayButton" type="Button" parent="."]
+margin_right = 96.0
+margin_bottom = 48.0
+text = "Play"
+
+[node name="PauseButton" type="Button" parent="."]
+margin_left = 112.0
+margin_right = 208.0
+margin_bottom = 48.0
+text = "Pause"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+margin_left = -120.0
+margin_top = 8.0
+margin_right = -3.0
+margin_bottom = 22.0
+text = "Erable v0.1
+Powered by Godot"
+align = 2
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
