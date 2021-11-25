@@ -1,8 +1,13 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
 
-[node name="Control" type="Control"]
+[ext_resource path="res://MainTheme.tres" type="Theme" id=1]
+[ext_resource path="res://App.gd" type="Script" id=2]
+
+[node name="Player" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -11,14 +16,38 @@ __meta__ = {
 margin_right = 96.0
 margin_bottom = 48.0
 text = "Play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="PauseButton" type="Button" parent="."]
 margin_left = 112.0
 margin_right = 208.0
 margin_bottom = 48.0
 text = "Pause"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="BrowseButton" type="Button" parent="."]
+margin_left = 224.0
+margin_right = 312.0
+margin_bottom = 48.0
+text = "Browse"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FileDialog" type="FileDialog" parent="."]
+margin_left = 160.0
+margin_top = 112.0
+margin_right = 792.0
+margin_bottom = 488.0
+window_title = "Open a File"
+mode = 0
+access = 2
+current_dir = "/"
+current_path = "/"
 
 [node name="Label" type="Label" parent="."]
 anchor_right = 1.0
@@ -33,3 +62,9 @@ valign = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="BrowseButton" to="." method="_on_BrowseButton_pressed"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_FileDialog_file_selected"]
