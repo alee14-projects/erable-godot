@@ -43,11 +43,14 @@ margin_left = 160.0
 margin_top = 112.0
 margin_right = 792.0
 margin_bottom = 488.0
-window_title = "Open a File"
+window_title = "Open an audio file"
 mode = 0
 access = 2
-current_dir = "/"
-current_path = "/"
+current_dir = "/run/media/storage/user-files/Projects/Erable"
+current_path = "/run/media/storage/user-files/Projects/Erable/"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label" type="Label" parent="."]
 anchor_right = 1.0
@@ -55,8 +58,9 @@ margin_left = -120.0
 margin_top = 8.0
 margin_right = -3.0
 margin_bottom = 22.0
-text = "Erable v0.1
-Powered by Godot"
+text = "Erable 0.1 Beta
+Powered by Godot
+Made by Andrew Lee"
 align = 2
 valign = 2
 __meta__ = {
@@ -65,6 +69,16 @@ __meta__ = {
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
+[node name="ProgressSlider" type="HSlider" parent="."]
+margin_left = 8.0
+margin_top = 94.0
+margin_right = 656.0
+margin_bottom = 118.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="BrowseButton" to="." method="_on_BrowseButton_pressed"]
 [connection signal="file_selected" from="FileDialog" to="." method="_on_FileDialog_file_selected"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]
