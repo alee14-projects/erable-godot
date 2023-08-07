@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/4616-werq-by-kevin-macleod.mp3-02d1e8cc3d6669c3a9d439e2a3abe9aa.mp3str"
+
+[deps]
+
+source_file="res://4616-werq-by-kevin-macleod.mp3"
+dest_files=[ "res://.import/4616-werq-by-kevin-macleod.mp3-02d1e8cc3d6669c3a9d439e2a3abe9aa.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

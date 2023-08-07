@@ -20,11 +20,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PauseButton" type="Button" parent="."]
+[node name="StopButton" type="Button" parent="."]
 margin_left = 112.0
 margin_right = 208.0
 margin_bottom = 48.0
-text = "Pause"
+text = "Stop"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -43,7 +43,7 @@ margin_left = 160.0
 margin_top = 112.0
 margin_right = 792.0
 margin_bottom = 488.0
-window_title = "Open an audio file"
+window_title = "Open a File"
 mode = 0
 access = 2
 current_dir = "/run/media/storage/user-files/Projects/Erable"
@@ -79,6 +79,7 @@ __meta__ = {
 }
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="StopButton" to="." method="_on_StopButton_pressed"]
 [connection signal="pressed" from="BrowseButton" to="." method="_on_BrowseButton_pressed"]
 [connection signal="file_selected" from="FileDialog" to="." method="_on_FileDialog_file_selected"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]

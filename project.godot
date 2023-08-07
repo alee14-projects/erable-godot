@@ -15,6 +15,25 @@ config/description="Audio Player"
 run/main_scene="res://App.tscn"
 config/icon="res://erable.png"
 
+[debug]
+
+settings/stdout/verbose_stdout=true
+gdscript/warnings/treat_warnings_as_errors=true
+
+[display]
+
+window/handheld/orientation="portrait"
+
+[gdnative]
+
+singletons=[  ]
+
+[logging]
+
+file_logging/max_log_files=10
+
 [rendering]
 
 quality/driver/driver_name="GLES2"
+quality/intended_usage/framebuffer_allocation=0
+quality/intended_usage/framebuffer_allocation.mobile=0
